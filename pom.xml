@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.7.16</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.example.pictgram</groupId>
 	<artifactId>pictgram</artifactId>
-  <packaging>war</packaging>
+	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>pictgram</name>
 	<description>pictgram</description>
@@ -72,10 +73,6 @@
 			<artifactId>validation-api</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-		</dependency>
-		<dependency>
 			<groupId>org.modelmapper</groupId>
 			<artifactId>modelmapper</artifactId>
 			<version>2.4.4</version>
@@ -84,6 +81,11 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 			<version>1.4</version>
+		</dependency>
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
 		</dependency>
 	</dependencies>
 
@@ -94,34 +96,36 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
-			  <groupId>nl.geodienstencentrum.maven</groupId>
-			  <artifactId>sass-maven-plugin</artifactId>
-			  <version>3.7.2</version>
-			  <executions>
-			    <execution>
-			      <id>compile</id>
-			      <phase>prepare-package</phase>
-			      <goals>
-			        <goal>update-stylesheets</goal>
-			      </goals>
-			    </execution>
-			  </executions>
-			  <configuration>
-			    <resources>
-			      <resource>
-			        <source>
-			          <directory>${basedir}/src/main/resources/static/scss</directory>
-			        </source>
-			        <destination>${basedir}/src/main/resources/static/css</destination>
-			      </resource>
-			    </resources>
-			    <sassOptions>
-			      <cache>false</cache>
-			      <always_update>true</always_update>
-			    </sassOptions>
-			  </configuration>
+				<groupId>nl.geodienstencentrum.maven</groupId>
+				<artifactId>sass-maven-plugin</artifactId>
+				<version>3.7.2</version>
+				<executions>
+					<execution>
+						<id>compile</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>update-stylesheets</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<resources>
+						<resource>
+							<source>
+								<directory>
+									${basedir}/src/main/resources/static/scss</directory>
+							</source>
+							<destination>
+								${basedir}/src/main/resources/static/css</destination>
+						</resource>
+					</resources>
+					<sassOptions>
+						<cache>false</cache>
+						<always_update>true</always_update>
+					</sassOptions>
+				</configuration>
 			</plugin>
-					</plugins>
-				</build>
+		</plugins>
+	</build>
 
 </project>

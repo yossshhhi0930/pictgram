@@ -1,22 +1,23 @@
 spring:
-  datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:pictgram
-    username: sa
-    password: 
-
-  h2:
-    console:
-      enabled: true
-      
   mvc:
     hiddenmethod:
       filter:
         enabled: true
-  
   servlet:
     multipart:
       max-file-size: 20MB
       max-request-size: 20MB
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/pictgram
+    username: ${psql.user}
+    password: ${psql.password}
+    #properties:
+      #hibernate:
+        #dialect: org.hibernate.dialect.PostgreSQLDialect
+        #ddl-auto: create-drop
+  #h2:
+    #console:
+      #enabled: true
 image:
   local: true
