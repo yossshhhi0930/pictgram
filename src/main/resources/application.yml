@@ -19,7 +19,7 @@ spring:
     port: ${spring.mail.port}
     username: ${spring.mail.username}
     password: ${spring.mail.password}
-    properties:  
+    properties: 
       mail:
         smtp:
           auth: true
@@ -39,3 +39,6 @@ image:
   
 onesignal:
   id: ${onesignal.id}
+  
+googlemap:
+  key: ${googlemap.key}
